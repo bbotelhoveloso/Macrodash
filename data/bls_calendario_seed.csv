@@ -1,0 +1,11 @@
+data,hora,categoria,evento,fonte,status,link
+2026-09-04,08:30,Emprego,Employment Situation (payroll),BLS,estimado,https://www.bls.gov/schedule/news_release/empsit.htm
+2026-10-02,08:30,Emprego,Employment Situation (payroll),BLS,estimado,https://www.bls.gov/schedule/news_release/empsit.htm
+2026-11-06,08:30,Emprego,Employment Situation (payroll),BLS,estimado,https://www.bls.gov/schedule/news_release/empsit.htm
+2026-12-04,08:30,Emprego,Employment Situation (payroll),BLS,estimado,https://www.bls.gov/schedule/news_release/empsit.htm
+2027-01-08,08:30,Emprego,Employment Situation (payroll),BLS,estimado,https://www.bls.gov/schedule/news_release/empsit.htm
+2026-09-09,08:30,Inflação,CPI (Consumer Price Index),BLS,estimado,https://www.bls.gov/schedule/news_release/cpi.htm
+2026-10-14,08:30,Inflação,CPI (Consumer Price Index),BLS,estimado,https://www.bls.gov/schedule/news_release/cpi.htm
+2026-11-11,08:30,Inflação,CPI (Consumer Price Index),BLS,estimado,https://www.bls.gov/schedule/news_release/cpi.htm
+2026-12-09,08:30,Inflação,CPI (Consumer Price Index),BLS,estimado,https://www.bls.gov/schedule/news_release/cpi.htm
+2027-01-13,08:30,Inflação,CPI (Consumer Price Index),BLS,estimado,https://www.bls.gov/schedule/news_release/cpi.htm

@@ -1,0 +1,44 @@
+name: Captura diária Macro Dashboard
+
+on:
+  schedule:
+    # 11:00 UTC = 08:00 BRT / ~07:00 ET — depois da atualização matinal do
+    # NY Fed (EFFR/SOFR) e do fechamento do dia anterior do BCB/ANBIMA,
+    # antes da abertura do pregão nos EUA.
+    - cron: "0 11 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r scripts/requirements-fetch.txt
+
+      - run: python scripts/fetch_juros_brasil.py
+
+      - run: python scripts/fetch_ettj_anbima.py
+
+      - run: python scripts/fetch_juros_eua.py
+
+      - run: python scripts/fetch_petroleo.py
+
+      - run: python scripts/fetch_calendario_brasil.py
+
+      - run: python scripts/fetch_calendario_eua.py
+
+      - name: Commit e push se houver dados novos
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/*.parquet
+          git diff --cached --quiet && echo "Sem mudanças, nada a commitar." || git commit -m "Captura macro $(date -u +%Y-%m-%d)"
+          git push
